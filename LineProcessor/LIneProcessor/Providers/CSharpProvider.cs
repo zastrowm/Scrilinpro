@@ -61,7 +61,7 @@ namespace LineProcessor.Providers
 			}
 			catch (CompilationErrorException e)
 			{
-				var error = new Exception(string.Format("Invalid Script for '{0}'", context.Name), e);
+				var error = new Exception(string.Format("Invalid Script for '{0}': {1}", context.Name, e.Message), e);
 				return SafeValue.FromException(error);
 			}
 			catch (Exception e)
