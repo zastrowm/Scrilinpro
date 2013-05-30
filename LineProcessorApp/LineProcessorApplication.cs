@@ -6,14 +6,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using LineProcessorApp.Controllers;
+using LineProcessorApp.Controls;
+using LineProcessorApp.Views;
 
 namespace LineProcessorApp
 {
-	public partial class LineProcessorApplication : Form
+	public partial class LineProcessorApplication : Form, IApplicationView
 	{
+		private ApplicationController _controller;
+
 		public LineProcessorApplication()
 		{
 			InitializeComponent();
+
+			_controller = new ApplicationController(this);
 		}
 
 		private void btnQuit_Click(object sender, EventArgs e)
@@ -21,9 +28,19 @@ namespace LineProcessorApp
 			this.Close();
 		}
 
-		private void ctlTabs_SelectedIndexChanged(object sender, EventArgs e)
+		public IProcessingView ProcessingView
 		{
-			ctlProcessor.Lines = ctlInput.Lines.ToArray();
+			get { return ctlProcessor; }
+		}
+
+		public IInputView InputView
+		{
+			get { return ctlInput; }
+		}
+
+		public IOutputView OutputView
+		{
+			get { return ctlOutput; }
 		}
 	}
 }

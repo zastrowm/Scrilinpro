@@ -1,4 +1,9 @@
-﻿namespace LineProcessorApp.Controls
+﻿using System.Text;
+using System.Linq;
+using System.Collections.Generic;
+using System;
+
+namespace LineProcessorApp.Views
 {
 	partial class Input
 	{
@@ -82,7 +87,6 @@
 			this.btnClipboard.TabIndex = 2;
 			this.btnClipboard.Text = "From Clipboard";
 			this.btnClipboard.UseVisualStyleBackColor = true;
-			this.btnClipboard.Click += new System.EventHandler(this.btnClipboard_Click);
 			// 
 			// Input
 			// 

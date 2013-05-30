@@ -47,23 +47,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\ControlRow.cs" />
-    <Compile Include="Controls\Input.cs">
+    <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\ControlRow.cs" />
+    <Compile Include="Controllers\OutputController.cs" />
+    <Compile Include="Model\Expression.cs" />
+    <Compile Include="Views\IApplicationView.cs" />
+    <Compile Include="Views\IExpressionView.cs" />
+    <Compile Include="Controllers\ProcessingController.cs" />
+    <Compile Include="Views\IInputView.cs" />
+    <Compile Include="Views\Input.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Input.Designer.cs">
+    <Compile Include="Views\Input.Designer.cs">
       <DependentUpon>Input.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Processing.cs">
+    <Compile Include="Controllers\InputController.cs" />
+    <Compile Include="Views\IOutputView.cs" />
+    <Compile Include="Views\IProcessingView.cs" />
+    <Compile Include="Views\Output.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\Processing.Designer.cs">
+    <Compile Include="Views\Output.Designer.cs">
+      <DependentUpon>Output.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Processing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Processing.Designer.cs">
       <DependentUpon>Processing.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ProcessingLine.cs">
+    <Compile Include="Views\ProcessingLine.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ProcessingLine.Designer.cs">
+    <Compile Include="Views\ProcessingLine.Designer.cs">
       <DependentUpon>ProcessingLine.cs</DependentUpon>
     </Compile>
     <Compile Include="LineProcessorApplication.cs">
@@ -74,13 +90,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\Input.resx">
+    <EmbeddedResource Include="Views\Input.resx">
       <DependentUpon>Input.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Processing.resx">
+    <EmbeddedResource Include="Views\Output.resx">
+      <DependentUpon>Output.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Processing.resx">
       <DependentUpon>Processing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ProcessingLine.resx">
+    <EmbeddedResource Include="Views\ProcessingLine.resx">
       <DependentUpon>ProcessingLine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LineProcessorApplication.resx" />
